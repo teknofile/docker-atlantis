@@ -1,0 +1,3 @@
+#!/command/execlineb -P
+
+s6-setuidgid abc /usr/local/bin/atlantis server --config /config/etc/server.yaml

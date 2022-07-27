@@ -49,4 +49,3 @@ RUN mkdir -p /config/
 COPY root/ /
 
 VOLUME [ "/config" ]
-ENTRYPOINT [ "/init" ]
