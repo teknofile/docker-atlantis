@@ -54,6 +54,9 @@ pipeline {
           configYaml = loadConfigYaml()
           env.BASE_TAG = configYaml.baseimage.version
           env.ATLANTIS_VERSION = configYaml.atlantis.version
+          env.TG_ATLANTIS_CONFIG_VER = configYaml.tg_atlantis_config.version
+          env.TF_VERSION = configYaml.terraform.version
+          env.TG_VERSION = configYaml.terragrunt.version
 
           withDockerRegistry(credentialsId: 'teknofile-dockerhub') {
             sh '''
@@ -63,6 +66,9 @@ pipeline {
                 --pull \
                 --build-arg BASE_TAG=${BASE_TAG} \
                 --build-arg ATLANTIS_VERSION=${ATLANTIS_VERSION} \
+                --build-arg TG_ATLANTIS_CONFIG_VER=${TG_ATLANTIS_CONFIG_VER} \
+                --build-arg TF_VERSION=${TF_VERSION} \
+                --build-arg TG_VERSION=${TG_VERSION} \
                 --platform linux/amd64,linux/arm64,linux/arm \
                 -t teknofile/${CONTAINER_NAME}:${BUILD_ID} \
                 -t teknofile/${CONTAINER_NAME}:${GITHASH_LONG} \
