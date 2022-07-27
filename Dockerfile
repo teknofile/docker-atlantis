@@ -9,6 +9,12 @@ ARG TG_ATLANTIS_CONFIG_VER
 ARG TF_VERSION
 ARG TG_VERSION
 
+RUN \
+  echo "**** install packages ****" && \
+  apk add --no-cache \
+    git
+
+
 RUN if [ "${TARGETPLATFORM}" == "linux/arm64" ] ; then \
     curl -o /tmp/atlantis.zip -L https://github.com/runatlantis/atlantis/releases/download/v${ATLANTIS_VERSION}/atlantis_linux_arm64.zip ; \
   elif [ "${TARGETPLATFORM}" == "linux/arm/v7" ] ; then \
