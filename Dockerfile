@@ -12,7 +12,8 @@ ARG TG_VERSION
 RUN \
   echo "**** install packages ****" && \
   apk add --no-cache \
-    git
+    git \
+    openssh
 
 
 RUN if [ "${TARGETPLATFORM}" == "linux/arm64" ] ; then \
