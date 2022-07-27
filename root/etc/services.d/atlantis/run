@@ -1,4 +1,4 @@
-#!/command/execlineb -P
+#!/command/with-contenv bash
 
 #GIT_SSH_COMMAND="ssh -i /config/keys/id_atlantisgithub -o 'StrictHostKeyChecking=no'"
 
