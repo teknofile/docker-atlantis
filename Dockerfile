@@ -29,7 +29,7 @@ RUN unzip /tmp/atlantis.zip -d /usr/local/bin
 RUN git clone https://github.com/tfutils/tfenv.git /opt/tfenv && \
   ln -s /opt/tfenv/bin/* /usr/local/bin/ && \
   tfenv install ${TF_VERSION} && \
-  tfenv use ${TF_VERSION}
+  tfenv use ${TF_VERSION} 
 
 RUN git clone https://github.com/cunymatthieu/tgenv.git /opt/tgenv
 RUN ln -s /opt/tgenv/bin/* /usr/local/bin/
