@@ -1,0 +1,4 @@
+baseimage:
+  version: 3.16.1
+atlantis:
+  version: 0.19.7
