@@ -1,5 +1,5 @@
 #!/command/execlineb -P
 
-export GIT_SSH_COMMAND="ssh -i /config/keys/id_atlantisgithub -o 'StrictHostKeyChecking=no'"
+GIT_SSH_COMMAND="ssh -i /config/keys/id_atlantisgithub -o 'StrictHostKeyChecking=no'"
 
 s6-setuidgid abc /usr/local/bin/atlantis server --config /config/etc/server.yaml
